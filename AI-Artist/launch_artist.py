@@ -210,10 +210,10 @@ def main():
     
     # Generate final artwork for each refined idea
     for idx, idea in enumerate(final_ideas):
-        idea_dir = osp.join(results_dir, f"idea_{idx+1}_{idea['New_Concept'].replace(' ', '_')}")
+        idea_dir = osp.join(results_dir, f"idea_{idx+1}_{selected_concepts[idx]['concept'].replace(' ', '_')}")
         final_artwork = generate_artwork(
             idea,
-            idea_dir,  # Save in idea directory
+            idea_dir,
             client,
             model=args.image_model,
             suffix="_final"
